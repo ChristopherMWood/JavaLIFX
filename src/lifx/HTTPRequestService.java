@@ -20,7 +20,6 @@ public class HTTPRequestService
 	
 	public Response Get(String url)
 	{
-		//Delay();
 		OkHttpClient client = new OkHttpClient();
 		Request request = new Request.Builder()
 		  .url(url)
@@ -43,7 +42,6 @@ public class HTTPRequestService
 	
 	public Response Put(String url, String jsonBody)
 	{
-		//Delay();
 		OkHttpClient client = new OkHttpClient();
 		MediaType mediaType = MediaType.parse("application/json");
 		RequestBody body = RequestBody.create(mediaType, jsonBody);
@@ -66,7 +64,7 @@ public class HTTPRequestService
 		return null;
 	}
 	
-	private void Delay()
+	public void Delay()
 	{
 		try
 		{

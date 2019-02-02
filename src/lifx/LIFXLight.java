@@ -23,7 +23,7 @@ public class LIFXLight
 		return deviceJson;
 	}
 	
-	protected void Delay(int requestDelay)
+	public void Delay(int requestDelay)
 	{
 		try
 		{

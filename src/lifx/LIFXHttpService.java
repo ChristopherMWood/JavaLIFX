@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
 import okhttp3.Response;
 
 public class LIFXHttpService implements LIFXService
@@ -32,11 +31,12 @@ public class LIFXHttpService implements LIFXService
 			for (JSONObject device : allDevices)
 			{
 				JSONObject light = (JSONObject)device.get("product");
-				JSONObject zones = (JSONObject)device.get("zones");
-				//Long zoneCount =  zones.get("count");
 				if (((String)light.get("identifier")).equals("lifx_z2") && (boolean)device.get("connected"))
+				{
+					JSONObject zones = (JSONObject)device.get("zones");
 					smartStrips.add(new LIFXZStrip((String)device.get("id"), (String)device.get("label"),
-							32, device.toJSONString(), requestService));
+							(long)zones.get("count"), device.toJSONString(), requestService));
+				}
 			}
 		}
 		catch (Exception e)
@@ -45,5 +45,10 @@ public class LIFXHttpService implements LIFXService
 		}
 		
 		return smartStrips;
+	}
+
+	@Override
+	public ArrayList<LIFXLight> GetAllAvailableLights() {
+		throw new UnsupportedOperationException("Currently unsupported");
 	}
 }
