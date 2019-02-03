@@ -1,8 +1,8 @@
 import java.io.IOException;
 
+import lifx.LIFXDemos;
 import lifx.LIFXHelper;
 import lifx.LIFXZStrip;
-import lifx.LightColors;
 
 public class Program
 {
@@ -11,21 +11,7 @@ public class Program
 	
 	public static void YourCode(LIFXZStrip light)
 	{
-		light.TurnOn();
-		light.SetZoneRangeColor(0, light.ZonesCount(), LightColors.White);
-		
-		for (int i = 0; i < light.ZonesCount(); i++)
-		{
-			if (i == 0)
-			{
-				light.SetZoneColor(i, LightColors.Green);
-			}
-			else
-			{
-				light.SetZoneColor(i - 1, LightColors.White);
-				light.SetZoneColor(i, LightColors.Green);
-			}
-		}
+		LIFXDemos.WalkUpLightStrip(light);
 	}
 	
 	public static void main(String[] args) throws IOException
