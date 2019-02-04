@@ -7,7 +7,7 @@ import lifx.LIFXZStrip;
 public class Program
 {
 	private static String apiKey = "cccc94c7e3a634db1ec96911fb5c24d9675626a0241aec9b228499f707f239bc";
-	private static String lightId = "";
+	private static String lightId = "d073d52672aa";
 	
 	public static void YourCode(LIFXZStrip light)
 	{

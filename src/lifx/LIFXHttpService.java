@@ -47,7 +47,6 @@ public class LIFXHttpService
 		return smartStrips;
 	}
 
-	@Override
 	public ArrayList<LIFXLight> GetAllAvailableLights() {
 		throw new UnsupportedOperationException("Currently unsupported");
 	}
