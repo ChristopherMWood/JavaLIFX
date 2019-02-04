@@ -6,7 +6,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import okhttp3.Response;
 
-public class LIFXHttpService implements LIFXService
+public class LIFXHttpService
 {
 	private HTTPRequestService requestService;
 	

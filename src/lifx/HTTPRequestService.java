@@ -1,6 +1,8 @@
 package lifx;
 
 import java.io.IOException;
+
+import okhttp3.Call;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -29,7 +31,9 @@ public class HTTPRequestService
 
 		try 
 		{
-			return client.newCall(request).execute();
+			Response response = client.newCall(request).execute();
+			Delay();
+			return response;
 		} 
 		catch (IOException e) 
 		{
@@ -53,7 +57,9 @@ public class HTTPRequestService
 	
 		try 
 		{
-			return client.newCall(request).execute();
+			Response response = client.newCall(request).execute();
+			Delay();
+			return response;
 		} 
 		catch (IOException e) 
 		{
