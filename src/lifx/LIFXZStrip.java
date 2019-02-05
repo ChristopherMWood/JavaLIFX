@@ -96,7 +96,10 @@ public class LIFXZStrip extends LIFXLight
 			jsonBody.put("power", "off");
 		jsonBody.put("fast", fastMode);
 		Response response = httpService.Put(requestUrl, jsonBody.toJSONString());
-		OutputHTTPResponse("PUT", "TurnOff", response.code());
+		if (on)
+			OutputHTTPResponse("PUT", "TurnOn", response.code());
+		else
+			OutputHTTPResponse("PUT", "TurnOff", response.code());
 	}
 
 	private void OutputHTTPResponse(String verb, String requestName, int code)
